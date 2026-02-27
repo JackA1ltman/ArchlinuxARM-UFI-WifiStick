@@ -110,10 +110,10 @@ function config_rootfs()
     # Initialize environment
     $chlivedo "pacman-key --init"
     $chlivedo "pacman-key --populate archlinuxarm"
-    $chlivedo "pacman --noconfirm -Rcns linux-aarch64"
-    $chlivedo "pacman --noconfirm -Syyu"
-    $chlivedo "pacman --noconfirm -S arch-install-scripts cloud-guest-utils"
-    $chlivedo "pacman --noconfirm -S base-devel git"
+    $chlivedo "pacman --noconfirm -Rcns linux-aarch64 --disable-sandbox"
+    $chlivedo "pacman --noconfirm -Syyu --disable-sandbox"
+    $chlivedo "pacman --noconfirm -S arch-install-scripts cloud-guest-utils --disable-sandbox"
+    $chlivedo "pacman --noconfirm -S base-devel git --disable-sandbox"
 
     # Install basic rootfs
     for package in $(cat config/*.pkg.conf); do
