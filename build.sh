@@ -191,14 +191,16 @@ mkdir -p build
 
 function target_lk2nd()
 {
-    build_lk2nd
+    #build_lk2nd
+	echo "Skipped"
 }
 
 function target_kernel()
 {
-    build_linux
-    make_boot
-    make_image
+    #build_linux
+    #make_boot
+    #make_image
+	echo "Skipped"
 }
 
 function target_rootfs()
