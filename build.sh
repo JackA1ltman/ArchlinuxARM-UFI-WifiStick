@@ -104,6 +104,7 @@ function config_rootfs()
     cp -p /usr/bin/qemu-aarch64-static $livecd/bin/qemu-aarch64-static
     echo "Server = $mirror" > $livecd/etc/pacman.d/mirrorlist
 	sed -i 's/#DisableSandbox/DisableSandbox/' $livecd/etc/pacman.conf
+	sed -i 's/^DownloadUser = alpm$/#DownloadUser = alpm/' $livecd/etc/pacman.conf
 	cp /etc/resolv.conf $livecd/etc/resolv.conf
 
     # Initialize environment
