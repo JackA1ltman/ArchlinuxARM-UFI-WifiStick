@@ -28,12 +28,12 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install make mkbootimg build-essential \
+          sudo apt install make build-essential \
             libncurses5-dev bison flex libssl-dev device-tree-compiler \
             gcc-arm-none-eabi gcc-aarch64-linux-gnu bc libfdt-dev \
             libarchive-tools arch-install-scripts qemu-user-static
-          wget -q https://bugs.launchpad.net/ubuntu/+source/android-platform-tools/+bug/2058228/+attachment/5898670/+files/mkbootimg -O mkbootimg
-          sudo mv -f mkbootimg /usr/bin/mkbootimg
+          wget http://ftp.debian.org/debian/pool/main/a/android-platform-tools/mkbootimg_34.0.5-12_all.deb
+          sudo dpkg -i mkbootimg_34.0.5-12_all.deb
 
       - name: Initialization submodule
         run: git submodule update --init --depth=1
