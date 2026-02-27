@@ -32,6 +32,7 @@ function make_image()
     options+=" -o ${bootimg}"
 
     cmdline="earlycon console=ttyMSM0,115200 rootwait root=PARTUUID=a7ab80e8-e9d1-e8cd-f157-93f69b1d141e rw"
+	export PYTHONPATH=/usr/share/android-tools/mkbootimg
     mkbootimg --cmdline "${cmdline}" ${options}
 }
 
