@@ -157,7 +157,6 @@ function config_rootfs()
     $chrootdo "systemctl enable $(cat config/services.conf)"
     $chrootdo "pacman-key --init"
     $chrootdo "pacman-key --populate archlinuxarm"
-    $chrootdo "pacman --noconfirm -Syy"
 
     rm -rf $livecd/bin/qemu-aarch64-static
     rm -rf $rootfs/bin/qemu-aarch64-static
